@@ -1,9 +1,7 @@
 package com.br.ayrton.course.service;
 
 import com.br.ayrton.course.entities.Order;
-import com.br.ayrton.course.entities.User;
 import com.br.ayrton.course.repositories.OrderRepository;
-import com.br.ayrton.course.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

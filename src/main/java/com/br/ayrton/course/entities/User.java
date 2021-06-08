@@ -26,7 +26,7 @@ public class User implements Serializable {
 
     @JsonIgnore
     @OneToMany (mappedBy = "client")
-    private List<Order> orders = new ArrayList<>();
+    @Getter private List<Order> orders = new ArrayList<>();
 
     public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
