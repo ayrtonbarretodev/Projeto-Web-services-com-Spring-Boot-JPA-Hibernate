@@ -5,7 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @EqualsAndHashCode
@@ -19,8 +21,9 @@ public class Category implements Serializable {
 
     @Getter  @Setter private String name;
 
-//    @ManyToMany
-//    @Getter private List<Product>products = new ArrayList<>();
+    //@ManyToMany
+    @Transient
+    @Getter private Set<Product> products = new HashSet<>();
 
 
     public Category(Long id, String name) {
