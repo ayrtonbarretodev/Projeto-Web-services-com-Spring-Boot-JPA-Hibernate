@@ -13,7 +13,7 @@ import java.util.Arrays;
 @Profile("test")
 public class TestConfig implements CommandLineRunner {
 
-    @Autowired
+    @Autowired //Permite que o objeto não necessite ser instanciado ( = new ) para que seja utilizado
     private UserRepository userRepository;
 
 
