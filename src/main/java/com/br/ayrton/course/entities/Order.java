@@ -1,5 +1,6 @@
 package com.br.ayrton.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
@@ -15,14 +16,17 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter private Long id;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     @Getter  @Setter private Instant moment;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
-    private User client;
+    @Getter  @Setter private User client;
 
-    public Order(Long id, Instant moment) {
+    public Order(Long id, Instant moment, User client) {
         this.id = id;
         this.moment = moment;
+        this.client = client;
     }
 }

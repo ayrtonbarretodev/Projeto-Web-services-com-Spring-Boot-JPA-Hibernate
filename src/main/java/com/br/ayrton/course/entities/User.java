@@ -1,5 +1,6 @@
 package com.br.ayrton.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,6 +24,7 @@ public class User implements Serializable {
     @Getter  @Setter private String phone;
     @Getter  @Setter private String password;
 
+    @JsonIgnore
     @OneToMany (mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
 
