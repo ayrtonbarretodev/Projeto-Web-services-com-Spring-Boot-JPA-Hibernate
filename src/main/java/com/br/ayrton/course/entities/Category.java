@@ -1,12 +1,12 @@
 package com.br.ayrton.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -21,8 +21,8 @@ public class Category implements Serializable {
 
     @Getter  @Setter private String name;
 
-    //@ManyToMany
-    @Transient
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")
     @Getter private Set<Product> products = new HashSet<>();
 
 
@@ -30,4 +30,17 @@ public class Category implements Serializable {
         this.id = id;
         this.name = name;
     }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Category category = (Category) o;
+//        return id.equals(category.id);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 }
