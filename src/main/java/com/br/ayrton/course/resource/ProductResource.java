@@ -1,8 +1,6 @@
 package com.br.ayrton.course.resource;
 
-import com.br.ayrton.course.entities.Category;
 import com.br.ayrton.course.entities.Product;
-import com.br.ayrton.course.service.CategoryService;
 import com.br.ayrton.course.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

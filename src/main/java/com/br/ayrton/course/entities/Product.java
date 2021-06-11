@@ -1,9 +1,9 @@
 package com.br.ayrton.course.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
