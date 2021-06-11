@@ -1,5 +1,6 @@
 package com.br.ayrton.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -34,6 +35,10 @@ public class Product implements Serializable {
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     @Getter private Set<Category> categories = new HashSet<>();
+
+//    @JsonIgnore
+//    @ManyToMany(mappedBy = "products")
+//    @Getter private Set<Order> orders = new HashSet<>();
 
     public Product(Long id, String name, String description, Double price, String imgUrl) {
         this.id = id;
